@@ -475,7 +475,9 @@ ng.module('smart-table')
           for (i = start; i < end; i++) {
             scope.pages.push(i);
           }
-
+          if(scope.currentPage >= end){
+            scope.selectPage(end-1);
+          }
           if (prevPage !== scope.currentPage) {
             scope.stPageChange({newPage: scope.currentPage});
           }
